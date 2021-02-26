@@ -30,7 +30,7 @@ export const Container = styled.div<ContainerProps>`
   ${props =>
     props.isFilled &&
     css`
-      color: #ff9000;
+      color: ${props.theme.color.primary};
     `}
   input {
     font-family: Open Sans;
@@ -47,5 +47,7 @@ export const Container = styled.div<ContainerProps>`
   }
   svg {
     margin-right: 16px;
+    width: 30px;
+    height: 30px;
   }
 `;

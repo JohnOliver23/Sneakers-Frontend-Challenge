@@ -1,0 +1,7 @@
+{
+  "name": "dev",
+  "REACT_APP_API_URL": "https://voliveira.s3-sa-east-1.amazonaws.com",
+  "headers": {
+    "Content-type": "application/json"
+  }
+}

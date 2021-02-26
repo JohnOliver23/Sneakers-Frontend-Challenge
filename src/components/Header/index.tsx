@@ -4,11 +4,11 @@ import Avatar from '../../assets/images/Avatar.png';
 
 import { Container, ContainerCenter, ContainerAvatar } from './styles';
 
-interface HeaderlProps {
+interface HeaderProps {
   title: string;
 }
 
-const Header: React.FC<HeaderlProps> = ({ title }: HeaderlProps) => (
+const Header: React.FC<HeaderProps> = ({ title }: HeaderProps) => (
   <Container>
     <ContainerCenter>
       <h3>{title}</h3>
