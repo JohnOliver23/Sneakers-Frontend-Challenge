@@ -3,17 +3,18 @@
 import React, { useCallback } from 'react';
 import { Col } from 'react-bootstrap';
 import { Container, ContainerSelects, ContainerCenter } from './styles';
-import { Sneaker, Cart } from '../../services/types';
+import { Sneaker, PaymentMethod } from '../../services/types';
 import Button from '../Button';
 import Select from '../Select';
 import { SneakerNumbers, SneakerQuantity, customer } from '../../utils/util';
 import { useFormik } from 'formik';
 import { formatPrice } from '../../services/functions';
+import { Action } from '../../services/types';
 
 interface SneakerCardProps {
   sneaker: Sneaker;
   navigation: any;
-  setCart: React.Dispatch<React.SetStateAction<Cart | undefined>>;
+  setCart: React.Dispatch<Action>;
 }
 
 const CardSneaker: React.FC<SneakerCardProps> = ({
@@ -37,8 +38,9 @@ const CardSneaker: React.FC<SneakerCardProps> = ({
         size: values.size,
         customer,
         totalCost: formatPrice(sneaker.price, values.quantity),
+        paymentMethod: PaymentMethod.ONLINE,
       };
-      setCart(cart);
+      setCart({ type: 'UPDATE-ALL', payload: cart });
       next();
     },
   });

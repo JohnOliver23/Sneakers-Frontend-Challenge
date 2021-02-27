@@ -19,6 +19,19 @@ export function genericReducer(state: any, action: Action) {
       return updatedList;
     case 'UPDATE-ALL':
       return action.payload;
+    case 'UPDATE-METHOD':
+      if (action.cart) {
+        let newCart = {
+          sneaker: action.cart.sneaker,
+          size: action.cart.size,
+          customer: action.cart.customer,
+          quantity: action.cart.quantity,
+          paymentMethod: action.payload,
+          totalCost: action.cart.totalCost,
+        };
+        return newCart;
+      }
+      return state;
     default:
       return state;
   }

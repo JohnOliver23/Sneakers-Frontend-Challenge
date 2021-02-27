@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface ContainerOptionProps {
+  selected: boolean;
+}
 
 export const Container = styled.div`
   h3 {
@@ -8,7 +12,12 @@ export const Container = styled.div`
   }
 `;
 
-export const ContainerOption = styled.div`
+export const ContainerOption = styled.div<ContainerOptionProps>`
+  ${props =>
+    props.selected &&
+    css`
+      border: 1px solid #5dac50;
+    `}
   background: #ffffff;
   border-radius: 10.8766px;
   height: 70px;

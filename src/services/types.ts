@@ -1,13 +1,14 @@
 export interface Action {
   payload: any;
   type: string;
+  cart?: Cart;
   [key: string]: any;
 }
 export interface Cart {
   sneaker: Sneaker;
   size: number;
   quantity: number;
-  paymentMethod?: any;
+  paymentMethod: PaymentMethod;
   customer: Customer;
   totalCost: number;
 }
@@ -30,4 +31,10 @@ export interface Customer {
 export interface Address {
   street: string;
   number: number;
+}
+
+export enum PaymentMethod {
+  ONLINE = 'Online Banking',
+  CARD = 'Card Payment',
+  APPLE = 'Apple Pay',
 }

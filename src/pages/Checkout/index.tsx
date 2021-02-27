@@ -9,11 +9,12 @@ import {
 import { Row, Col } from 'react-bootstrap';
 import CartDetails from '../../components/CartDetails';
 import PaymentMethods from '../../components/PaymentMethods';
+import { Action } from '../../services/types';
 
 interface CheckoutProps {
   navigation: any;
   cart: Cart | undefined;
-  setCart: React.Dispatch<React.SetStateAction<Cart | undefined>>;
+  setCart: React.Dispatch<Action>;
 }
 
 const Checkout: React.FC<CheckoutProps> = ({
@@ -32,7 +33,11 @@ const Checkout: React.FC<CheckoutProps> = ({
             <Col md={7}>
               <ContainerDetails>
                 <CartDetails cart={cart} />
-                <PaymentMethods />
+                <PaymentMethods
+                  cart={cart}
+                  navigation={navigation}
+                  setCart={setCart}
+                />
               </ContainerDetails>
             </Col>
           </Row>

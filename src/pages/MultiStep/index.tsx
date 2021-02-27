@@ -1,10 +1,10 @@
-import React, { useReducer, useEffect, useState } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { useStep } from 'react-hooks-helper';
 import Header from '../../components/Header';
 import Sneakers from '../Sneakers';
 import Checkout from '../Checkout';
+import Review from '../Review';
 import { genericReducer } from '../../services/reducers';
-import { Cart } from '../../services/types';
 import { getSneakers } from '../../services/api';
 import Step from '../../components/Step';
 
@@ -14,7 +14,7 @@ const MultiStep: React.FC = () => {
   const { navigation, index } = useStep({ initialStep: 0, steps });
   const [sneakers, setSneakers] = useReducer(genericReducer, []);
   const [sneakersToShow, setSneakersToShow] = useReducer(genericReducer, []);
-  const [cart, setCart] = useState<Cart>();
+  const [cart, setCart] = useReducer(genericReducer, null);
 
   useEffect(() => {
     (async () => {
@@ -53,6 +53,14 @@ const MultiStep: React.FC = () => {
           <Header title="Checkout" previous={previous} />
           <Step activeStep={1} steps={steps} />
           <Checkout {...propsCheckout} />
+        </>
+      );
+    case 2:
+      return (
+        <>
+          <Header title="Review and confirmation" previous={previous} />
+          <Step activeStep={2} steps={steps} />
+          <Review />
         </>
       );
     default:

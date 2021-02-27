@@ -9,7 +9,7 @@ import {
   NoSearchTitle,
 } from './styles';
 import Input from '../../components/Input';
-import { Sneaker, Action, Cart } from '../../services/types';
+import { Sneaker, Action } from '../../services/types';
 import CardSneaker from '../../components/CardSneaker';
 
 interface SneakerProps {
@@ -17,7 +17,7 @@ interface SneakerProps {
   sneakers: Sneaker[];
   sneakersToShow: Sneaker[];
   setSneakersToShow: React.Dispatch<Action>;
-  setCart: React.Dispatch<React.SetStateAction<Cart | undefined>>;
+  setCart: React.Dispatch<Action>;
 }
 
 const Sneakers: React.FC<SneakerProps> = ({
