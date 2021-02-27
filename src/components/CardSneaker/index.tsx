@@ -3,28 +3,50 @@
 import React, { useCallback } from 'react';
 import { Col } from 'react-bootstrap';
 import { Container, ContainerSelects, ContainerCenter } from './styles';
-import { Sneaker } from '../../services/types';
+import { Sneaker, Cart } from '../../services/types';
 import Button from '../Button';
 import Select from '../Select';
-import { SneakerNumbers, SneakerQuantity } from '../../utils/util';
+import { SneakerNumbers, SneakerQuantity, customer } from '../../utils/util';
+import { useFormik } from 'formik';
+import { formatPrice } from '../../services/functions';
 
 interface SneakerCardProps {
   sneaker: Sneaker;
   navigation: any;
+  setCart: React.Dispatch<React.SetStateAction<Cart | undefined>>;
 }
 
 const CardSneaker: React.FC<SneakerCardProps> = ({
   sneaker,
   navigation,
+  setCart,
 }: SneakerCardProps) => {
+  const { next } = navigation;
+
+  const formik = useFormik({
+    enableReinitialize: true,
+    initialValues: {
+      size: 41,
+      quantity: 1,
+    },
+
+    onSubmit: async values => {
+      let cart = {
+        sneaker,
+        quantity: values.quantity,
+        size: values.size,
+        customer,
+        totalCost: formatPrice(sneaker.price, values.quantity),
+      };
+      setCart(cart);
+      next();
+    },
+  });
+
   const mapAllNumbers = useCallback(
     () =>
       SneakerNumbers.map(number => (
-        <option
-          selected={number === 41 ? true : false}
-          key={number}
-          value={number}
-        >
+        <option key={number} value={number}>
           {number}
         </option>
       )),
@@ -33,11 +55,7 @@ const CardSneaker: React.FC<SneakerCardProps> = ({
   const mapAllQuantity = useCallback(
     () =>
       SneakerQuantity.map(number => (
-        <option
-          selected={number === 1 ? true : false}
-          key={number}
-          value={number}
-        >
+        <option key={number} value={number}>
           {number}
         </option>
       )),
@@ -49,18 +67,30 @@ const CardSneaker: React.FC<SneakerCardProps> = ({
         <img src={sneaker.thumbnailURL} alt={`picture${sneaker.id}`} />
         <h4>{sneaker.description}</h4>
         <ContainerCenter>
-          <ContainerSelects>
-            <div>
-              <p>Size</p>
-              <Select value={41} list={mapAllNumbers()} />
-            </div>
-            <div>
-              <p>Quantity</p>
-              <Select value={1} list={mapAllQuantity()} />
-            </div>
-          </ContainerSelects>
-          <h3>R$ {sneaker.price}</h3>
-          <Button>Add to Cart</Button>
+          <form onSubmit={formik.handleSubmit}>
+            <ContainerSelects>
+              <div>
+                <p>Size</p>
+                <Select
+                  name="size"
+                  onChange={formik.handleChange}
+                  value={formik.values.size}
+                  list={mapAllNumbers()}
+                />
+              </div>
+              <div>
+                <p>Quantity</p>
+                <Select
+                  name="quantity"
+                  onChange={formik.handleChange}
+                  value={formik.values.quantity}
+                  list={mapAllQuantity()}
+                />
+              </div>
+            </ContainerSelects>
+            <h3>R$ {sneaker.price}</h3>
+            <Button type="submit">Add to Cart</Button>
+          </form>
         </ContainerCenter>
       </Container>
     </Col>

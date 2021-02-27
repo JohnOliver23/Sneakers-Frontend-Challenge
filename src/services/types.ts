@@ -7,6 +7,9 @@ export interface Cart {
   sneaker: Sneaker;
   size: number;
   quantity: number;
+  paymentMethod?: any;
+  customer: Customer;
+  totalCost: number;
 }
 export interface Sneaker {
   color: string;
@@ -16,4 +19,15 @@ export interface Sneaker {
   maxresURL: string;
   price: string;
   thumbnailURL: string;
+}
+
+export interface Customer {
+  name: string;
+  phone: string;
+  address: Address;
+}
+
+export interface Address {
+  street: string;
+  number: number;
 }

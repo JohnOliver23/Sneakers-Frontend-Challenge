@@ -2,13 +2,15 @@ import React, { useReducer, useEffect, useState } from 'react';
 import { useStep } from 'react-hooks-helper';
 import Header from '../../components/Header';
 import Sneakers from '../Sneakers';
+import Checkout from '../Checkout';
 import { genericReducer } from '../../services/reducers';
 import { Cart } from '../../services/types';
 import { getSneakers } from '../../services/api';
+import Step from '../../components/Step';
 
-const steps = ['sneakers', 'checkout'];
+const steps = ['Cart', 'Payment Options', 'Receipt'];
 
-const MultiStepForm: React.FC = () => {
+const MultiStep: React.FC = () => {
   const { navigation, index } = useStep({ initialStep: 0, steps });
   const [sneakers, setSneakers] = useReducer(genericReducer, []);
   const [sneakersToShow, setSneakersToShow] = useReducer(genericReducer, []);
@@ -29,7 +31,14 @@ const MultiStepForm: React.FC = () => {
     sneakers,
     sneakersToShow,
     setSneakersToShow,
+    setCart,
   };
+  const propsCheckout = {
+    cart,
+    navigation,
+    setCart,
+  };
+  const { previous } = navigation;
   switch (index) {
     case 0:
       return (
@@ -39,10 +48,16 @@ const MultiStepForm: React.FC = () => {
         </>
       );
     case 1:
-      return <p>oi</p>;
+      return (
+        <>
+          <Header title="Checkout" previous={previous} />
+          <Step activeStep={1} steps={steps} />
+          <Checkout {...propsCheckout} />
+        </>
+      );
     default:
       return null;
   }
 };
 
-export default MultiStepForm;
+export default MultiStep;

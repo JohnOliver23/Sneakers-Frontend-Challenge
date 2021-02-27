@@ -9,7 +9,7 @@ import {
   NoSearchTitle,
 } from './styles';
 import Input from '../../components/Input';
-import { Sneaker, Action } from '../../services/types';
+import { Sneaker, Action, Cart } from '../../services/types';
 import CardSneaker from '../../components/CardSneaker';
 
 interface SneakerProps {
@@ -17,6 +17,7 @@ interface SneakerProps {
   sneakers: Sneaker[];
   sneakersToShow: Sneaker[];
   setSneakersToShow: React.Dispatch<Action>;
+  setCart: React.Dispatch<React.SetStateAction<Cart | undefined>>;
 }
 
 const Sneakers: React.FC<SneakerProps> = ({
@@ -24,6 +25,7 @@ const Sneakers: React.FC<SneakerProps> = ({
   sneakers,
   sneakersToShow,
   setSneakersToShow,
+  setCart,
 }: SneakerProps) => {
   const handleSearchChange = useCallback(
     (value: string) => {
@@ -52,6 +54,7 @@ const Sneakers: React.FC<SneakerProps> = ({
                 key={index}
                 sneaker={sneaker}
                 navigation={navigation}
+                setCart={setCart}
               />
             ))}
           </ContainerSneakers>
