@@ -67,6 +67,9 @@ export const Container = styled.div`
       margin-left: 10px;
     }
   }
+  .col-md-6 {
+    padding-left: 0px;
+  }
 `;
 export const Content = styled.div`
   display: flex;
@@ -77,6 +80,9 @@ export const Content = styled.div`
     .delivery-details {
       margin-top: 1rem;
       margin-left: 0px;
+    }
+    .payment-method {
+      display: none;
     }
   }
 `;

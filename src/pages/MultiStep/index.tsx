@@ -60,7 +60,7 @@ const MultiStep: React.FC = () => {
         <>
           <Header title="Review and confirmation" previous={previous} />
           <Step activeStep={2} steps={steps} />
-          <Review />
+          <Review {...propsCheckout} />
         </>
       );
     default:

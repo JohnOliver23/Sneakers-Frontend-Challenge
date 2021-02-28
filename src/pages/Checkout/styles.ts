@@ -61,6 +61,7 @@ export const ContainerImg = styled.div<ContainerImgProps>`
   }
 `;
 export const ContainerDetails = styled.div`
+  min-height: 60vh;
   width: 100%;
   background: #f7f7f7;
   border-radius: 10px;
