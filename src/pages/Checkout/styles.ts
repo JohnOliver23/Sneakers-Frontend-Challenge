@@ -20,6 +20,13 @@ export const ContainerCenter = styled.div`
   .row {
     width: 100%;
   }
+  @media all and (max-width: 1000px) {
+    width: 100%;
+    .col-md-7 {
+      max-width: 100%;
+      flex: 100%;
+    }
+  }
 `;
 export const ContainerImg = styled.div<ContainerImgProps>`
   background-image: url(${props => props.url});
@@ -29,6 +36,9 @@ export const ContainerImg = styled.div<ContainerImgProps>`
   background-position: center;
   background-size: cover;
   border-radius: 10px;
+  @media all and (max-width: 1000px) {
+    display: none
+  }
 `;
 export const ContainerDetails = styled.div`
   width: 100%;
@@ -37,4 +47,7 @@ export const ContainerDetails = styled.div`
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  @media all and (max-width: 1000px) {
+    padding: 16px;
+  }
 `;

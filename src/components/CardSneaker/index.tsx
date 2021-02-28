@@ -90,7 +90,7 @@ const CardSneaker: React.FC<SneakerCardProps> = ({
                 />
               </div>
             </ContainerSelects>
-            <h3>R$ {sneaker.price}</h3>
+            <h3>$ {sneaker.price}</h3>
             <Button type="submit">Add to Cart</Button>
           </form>
         </ContainerCenter>
