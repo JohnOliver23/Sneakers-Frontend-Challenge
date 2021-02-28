@@ -9,6 +9,26 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  .checkout-title {
+    display: none;
+    font-size: 18px;
+    color: ${props => props.theme.color.primaryText};
+  }
+  .payment-title {
+    display: none;
+    font-size: 18px;
+    color: ${props => props.theme.color.primaryText};
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  @media all and (max-width: 1000px) {
+    .checkout-title {
+      display: block;
+    }
+    .payment-title {
+      display: block;
+    }
+  }
 `;
 export const ContainerCenter = styled.div`
   display: flex;
@@ -37,17 +57,18 @@ export const ContainerImg = styled.div<ContainerImgProps>`
   background-size: cover;
   border-radius: 10px;
   @media all and (max-width: 1000px) {
-    display: none
+    display: none;
   }
 `;
 export const ContainerDetails = styled.div`
   width: 100%;
   background: #f7f7f7;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   @media all and (max-width: 1000px) {
-    padding: 16px;
+    padding: 0px;
+    background: #fff;
   }
 `;

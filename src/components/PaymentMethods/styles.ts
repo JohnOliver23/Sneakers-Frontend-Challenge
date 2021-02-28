@@ -5,10 +5,18 @@ interface ContainerOptionProps {
 }
 
 export const Container = styled.div`
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 16px;
   h3 {
     font-size: 22px;
     color: ${props => props.theme.color.primaryText};
     margin-bottom: 1rem;
+  }
+  @media all and (max-width: 1000px) {
+    h3 {
+      display: none;
+    }
   }
 `;
 
@@ -33,6 +41,24 @@ export const ContainerOption = styled.div<ContainerOptionProps>`
     font-size: 16px;
     color: #535353;
     margin-bottom: 0px;
+  }
+  @media all and (max-width: 1000px) {
+    p {
+      font-size: 12px;
+      margin-top: 3px;
+    }
+    .img-online {
+      width: 100px;
+      height: 20px;
+    }
+    .img-card {
+      width: 70px;
+      height: 20px;
+    }
+    .img-apple {
+      width: 50px;
+      height: 30px;
+    }
   }
 `;
 

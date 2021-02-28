@@ -78,21 +78,25 @@ const PaymentMethods: React.FC<PaymentMethodsProps> = ({
           selected={cart?.paymentMethod === PaymentMethod.ONLINE}
         >
           <p>Online Banking</p>
-          <img src={OnlineBankingCards} alt="Online Banking" />
+          <img
+            className="img-online"
+            src={OnlineBankingCards}
+            alt="Online Banking"
+          />
         </ContainerOption>
         <ContainerOption
           onClick={() => handleChangeOption(PaymentMethod.CARD)}
           selected={cart?.paymentMethod === PaymentMethod.CARD}
         >
           <p>Card Payment</p>
-          <img src={CardPayments} alt="Card Payment" />
+          <img className="img-card" src={CardPayments} alt="Card Payment" />
         </ContainerOption>
         <ContainerOption
           onClick={() => handleChangeOption(PaymentMethod.APPLE)}
           selected={cart?.paymentMethod === PaymentMethod.APPLE}
         >
           <p>Apple Pay</p>
-          <img src={ApplePay} alt="Apple Pay" />
+          <img className="img-apple" src={ApplePay} alt="Apple Pay" />
         </ContainerOption>
         <ContainerButton>
           <Button onClick={() => handleClick()}>Continue</Button>
