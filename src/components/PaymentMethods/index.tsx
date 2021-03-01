@@ -1,6 +1,11 @@
 import React, { useCallback } from 'react';
 
-import { Container, ContainerOption, ContainerButton } from './styles';
+import {
+  Container,
+  ContainerOption,
+  ContainerButton,
+  ContainerSave,
+} from './styles';
 import { Cart, PaymentMethod } from '../../services/types';
 import OnlineBankingCards from '../../assets/images/OnlineBankingCards.png';
 import CardPayments from '../../assets/images/CardPayments.png';
@@ -73,11 +78,14 @@ const PaymentMethods: React.FC<PaymentMethodsProps> = ({
     <>
       <Container>
         <h3>Select your payment method </h3>
+        <ContainerSave>
+          <p>SAVE $10</p>
+        </ContainerSave>
         <ContainerOption
           onClick={() => handleChangeOption(PaymentMethod.ONLINE)}
           selected={cart?.paymentMethod === PaymentMethod.ONLINE}
         >
-          <p>Online Banking</p>
+          <p className="p-online-banking">Online Banking</p>
           <img
             className="img-online"
             src={OnlineBankingCards}

@@ -13,19 +13,19 @@ const CartDetails: React.FC<CartDetailsProps> = ({
   return (
     <Container>
       <Content>
-        <Col md={4} className="container-img">
+        <Col xs={4} className="container-img">
           <ContainerImg url={cart.sneaker.thumbnailURL} />
         </Col>
         <ContainerDetails>
-          <div>
+          <Col md={6}>
             <h3>Cart total</h3>
             <h4>{cart.sneaker.description}</h4>
             <p>
               x {cart.quantity} {cart.sneaker.color} {cart.size}
             </p>
             <p>item #{cart.sneaker.id}</p>
-          </div>
-          <div className="delivery-details">
+          </Col>
+          <Col className="delivery-details">
             <h3>Delivery Details</h3>
             <p>{cart.customer.name}</p>
             <p>Phone no: {cart.customer.phone}</p>
@@ -40,7 +40,7 @@ const CartDetails: React.FC<CartDetailsProps> = ({
               </div>
               <h2>$ {cart.totalCost}</h2>
             </div>
-          </div>
+          </Col>
         </ContainerDetails>
       </Content>
       <div className="total-cost-mobile">

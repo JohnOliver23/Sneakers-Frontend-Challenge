@@ -35,7 +35,7 @@ export const ContainerCenter = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 90%;
   margin-bottom: 2rem;
   .row {
     width: 100%;

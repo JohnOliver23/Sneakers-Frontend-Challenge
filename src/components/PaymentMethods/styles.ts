@@ -42,6 +42,9 @@ export const ContainerOption = styled.div<ContainerOptionProps>`
     color: #535353;
     margin-bottom: 0px;
   }
+  .img-apple {
+    width: 60px;
+  }
   @media all and (max-width: 1000px) {
     p {
       font-size: 12px;
@@ -60,6 +63,33 @@ export const ContainerOption = styled.div<ContainerOptionProps>`
       height: 30px;
     }
   }
+  @media all and (max-width: 769px) {
+    .p-online-banking {
+      margin-top: -10px;
+    }
+  }
+`;
+export const ContainerSave = styled.div`
+  background: #ffcc00;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 18px;
+  width: 70px;
+  position: absolute;
+  margin-top: -8px;
+  margin-left: 20px;
+  & p {
+    color: #9e7d27;
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 1px;
+  }
+  @media all and (max-width: 769px) {
+    margin-top: 36px;
+    margin-left: 22px;
+  }
 `;
 
 export const ContainerButton = styled.div`
@@ -67,5 +97,10 @@ export const ContainerButton = styled.div`
   justify-content: flex-end;
   & button {
     width: 300px;
+  }
+  @media all and (max-width: 769px) {
+    button {
+      width: 100% !important;
+    }
   }
 `;

@@ -54,10 +54,11 @@ export const Container = styled.div`
     padding-right: 15px;
     padding-left: 0px;
     height: 150px;
+    min-width: 120px;
     @media all and (max-width: 1000px) {
       display: block;
     }
-    @media all and (max-width: 400px) {
+    @media all and (max-width: 500px) {
       height: 100px;
     }
   }
@@ -76,10 +77,20 @@ export const Content = styled.div`
   .delivery-details {
     margin-left: 1rem;
   }
+  .payment-method {
+    div {
+      display: flex;
+      align-items: center;
+    }
+    svg {
+      margin-right: 5px;
+    }
+  }
   @media all and (max-width: 769px) {
     .delivery-details {
       margin-top: 1rem;
       margin-left: 0px;
+      padding-left: 0px;
     }
     .payment-method {
       display: none;
@@ -98,12 +109,10 @@ export const ContainerImg = styled.div<ContainerImgProps>`
   background-image: url(${props => props.url});
   width: 100%;
   height: 100%;
-  min-width: 150px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 10px;
   @media all and (max-width: 400px) {
-    min-width: 100px;
   }
 `;
