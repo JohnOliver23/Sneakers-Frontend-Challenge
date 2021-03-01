@@ -4,9 +4,9 @@ This is a test for a Front-End Engineer position at Trustly. You'll need to deve
 single product and pay using Trustly as the payment method.
 
 ## Run the project
-- 1. git clone https://github.com/JohnOliver23/Sneakers-Frontend-Challenge.git
-- 2. yarn install
-- 3. yarn start
+1. git clone https://github.com/JohnOliver23/Sneakers-Frontend-Challenge.git
+2. yarn install
+3. yarn start
 
 # Pages
 ### Step 1, Sneakers: 
