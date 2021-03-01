@@ -16,26 +16,20 @@ export const ContainerCenter = styled.div`
 `;
 export const ContainerSneakers = styled.div`
   margin-top: 3rem !important;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 370px 370px 370px;
+  justify-content: space-around;
   .col-md-4 {
     padding-left: 50px;
     padding-right: 50px;
   }
 
   @media all and (max-width: 1200px) {
-    .col-md-4 {
-      max-width: 50%;
-      flex: 50%;
-    }
+    grid-template-columns: 370px 370px;
   }
-  @media all and (max-width: 800px) {
-    .col-md-4 {
-      max-width: 100%;
-      flex: 100%;
-      padding: 0px;
-    }
+  @media all and (max-width: 769px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 export const NoSearchTitle = styled.h3`

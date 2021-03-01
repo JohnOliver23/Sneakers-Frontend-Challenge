@@ -5,6 +5,7 @@ export const Container = styled.div`
   min-width: 300px;
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05);
   margin-bottom: 4rem;
+  max-width: 370px;
   img {
     width: 100%;
   }
@@ -20,6 +21,9 @@ export const Container = styled.div`
     margin-top: 10px;
     font-size: 21px;
     font-weight: bold;
+  }
+  @media all and (max-width: 769px) {
+    max-width: unset;
   }
 `;
 export const ContainerSelects = styled.div`
