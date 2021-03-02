@@ -3,10 +3,14 @@
 This is a test for a Front-End Engineer position at Trustly. You'll need to develop a simple checkout process of an e-commerce application in which the user will be able to buy one
 single product and pay using Trustly as the payment method.
 
+## Publish domain
+https://sneakers-challenge-deploy.herokuapp.com/
+
 ## Run the project
 1. git clone https://github.com/JohnOliver23/Sneakers-Frontend-Challenge.git
-2. yarn install
-3. yarn start
+2. cd Sneakers-Frontend-Challenge/
+3. yarn install
+4. yarn dev
 
 # Pages
 ### Step 1, Sneakers: 
