@@ -1,6 +1,9 @@
 {
   "name": "sneakers-challenge",
   "version": "0.1.0",
+  "engines": {
+    "node": "10.22.0"
+  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
@@ -17,7 +20,10 @@
     "@unform/web": "^2.1.3",
     "axios": "^0.19.2",
     "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "formik": "^2.2.6",
+    "path": "^0.12.7",
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-bootstrap": "^1.5.0",
@@ -35,7 +41,7 @@
     "yup": "^0.29.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
