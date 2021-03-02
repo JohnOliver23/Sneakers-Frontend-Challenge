@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# Sneakers-Frontend-Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a test for a Front-End Engineer position at Trustly. You'll need to develop a simple checkout process of an e-commerce application in which the user will be able to buy one
+single product and pay using Trustly as the payment method.
 
-## Available Scripts
+## Run the project
+1. git clone https://github.com/JohnOliver23/Sneakers-Frontend-Challenge.git
+2. yarn install
+3. yarn start
 
-In the project directory, you can run:
+# Pages
+### Step 1, Sneakers: 
 
-### `yarn start`
+- User can search sneaker filtering by name
+- User select only one sneaker
+- When user to click "Add to cart" he will be redirected to the next step
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Desktop
+![Step1](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step1.png?raw=true)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Mobile
+![Step1](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step1mobile.png?raw=true)
 
-### `yarn test`
+### Step 2, Checkout:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- This page has a beautiful component indicating the step the user is currently
+- It shows information about the selected product and also allows the user to select the payment method.
+- Online Banking is already selected
+- When user click "Continue" with "Online Banking" selected, the Trustly integration will be called.
 
-### `yarn build`
+#### Desktop
+![Step2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.png?raw=true)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Mobile
+![Step2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2mobile.png?raw=true)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step 2.1, Checkout, (Select the bank):
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- User can use any bank to complete her transaction, the screen of sign in  will be called
 
-### `yarn eject`
+#### Desktop
+![Step2.1](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.1.png?raw=true)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Mobile
+![Step2.1](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.1mobile.png?raw=true)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Step 2.2, Checkout, ( Sign in to your bank):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- The user will enter with her credentials
+- if the transaction is concluded, the user will be redirected to the final step
+- if the transaction is canceled, one toast will alert the user that a transaction has been canceled
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Desktop
+![Step2.2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.2.png?raw=true)
 
-## Learn More
+#### Mobile
+![Step2.2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.2mobile.png?raw=true)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Step 3, Receipt : 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The user can read the order details
+- Payment method selected
+- Placer order button not implemented
+
+#### Desktop
+![Step3](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step3.png?raw=true)
+
+#### Mobile
+![Step3](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step3mobile.png?raw=true)
+
+## Technologies:
+- Typescript
+- HTML
+- CSS
+
+## Framework
+### React FC with hooks
+- useState and useReducer for state control
+- useStep for page control
+- useEffect for lifecicle control
+
+## Libraries
+- Styled components
+- Formik
+- material-UI
+- React Bootstrap
+- axios
+- React Router DOM
+- React toastify
+
+
