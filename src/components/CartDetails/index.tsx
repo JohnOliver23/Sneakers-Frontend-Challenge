@@ -1,15 +1,25 @@
 import React from 'react';
 import { Cart } from '../../services/types';
-import { Container, Content, ContainerDetails, ContainerImg } from './styles';
+import {
+  Container,
+  Content,
+  ContainerDetails,
+  ContainerImg,
+  ContainerIcon,
+} from './styles';
 import { Col } from 'react-bootstrap';
+import { AiFillMinusCircle } from 'react-icons/ai';
 
 interface CartDetailsProps {
   cart: Cart;
+  navigation: any;
 }
 
 const CartDetails: React.FC<CartDetailsProps> = ({
   cart,
+  navigation,
 }: CartDetailsProps) => {
+  const { previous } = navigation;
   return (
     <Container>
       <Content>
@@ -17,6 +27,9 @@ const CartDetails: React.FC<CartDetailsProps> = ({
           <ContainerImg url={cart.sneaker.thumbnailURL} />
         </Col>
         <ContainerDetails>
+          <ContainerIcon>
+            <AiFillMinusCircle onClick={previous} size={20} color="#A5A5A5" />
+          </ContainerIcon>
           <Col md={6}>
             <h3>Cart total</h3>
             <h4>{cart.sneaker.description}</h4>

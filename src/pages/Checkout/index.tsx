@@ -33,7 +33,7 @@ const Checkout: React.FC<CheckoutProps> = ({
             <Col md={7}>
               <ContainerDetails>
                 <h3 className="checkout-title">Checkout</h3>
-                <CartDetails cart={cart} />
+                <CartDetails cart={cart} navigation={navigation} />
                 <h3 className="payment-title">Payment Method</h3>
                 <PaymentMethods
                   cart={cart}

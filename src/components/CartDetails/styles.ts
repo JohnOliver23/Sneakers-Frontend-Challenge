@@ -42,7 +42,7 @@ export const Container = styled.div`
   h2 {
     font-size: 30px;
     color: ${props => props.theme.color.primaryText};
-    margin-left: 2rem;
+    margin-left: 10px;
     font-weight: 600;
   }
   .container-column {
@@ -114,5 +114,12 @@ export const ContainerImg = styled.div<ContainerImgProps>`
   background-size: cover;
   border-radius: 10px;
   @media all and (max-width: 400px) {
+  }
+`;
+export const ContainerIcon = styled.div`
+  display: none;
+  justify-content: flex-end;
+  @media all and (max-width: 769px) {
+    display: flex;
   }
 `;
