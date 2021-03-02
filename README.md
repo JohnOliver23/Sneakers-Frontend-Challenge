@@ -32,6 +32,7 @@ single product and pay using Trustly as the payment method.
 ![Step2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.png?raw=true)
 
 #### Mobile
+![Step2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2mobile.png?raw=true)
 
 ### Step 2.1, Checkout, (Select the bank):
 
@@ -41,7 +42,7 @@ single product and pay using Trustly as the payment method.
 ![Step2.1](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.1.png?raw=true)
 
 #### Mobile
-
+![Step2.1](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.1mobile.png?raw=true)
 
 ### Step 2.2, Checkout, ( Sign in to your bank):
 
@@ -53,6 +54,7 @@ single product and pay using Trustly as the payment method.
 ![Step2.2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.2.png?raw=true)
 
 #### Mobile
+![Step2.2](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step2.2mobile.png?raw=true)
 
 ### Step 3, Receipt : 
 
@@ -64,6 +66,7 @@ single product and pay using Trustly as the payment method.
 ![Step3](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step3.png?raw=true)
 
 #### Mobile
+![Step3](https://github.com/JohnOliver23/Sneakers-Frontend-Challenge/blob/main/images/step3mobile.png?raw=true)
 
 ## Technologies:
 - Typescript
